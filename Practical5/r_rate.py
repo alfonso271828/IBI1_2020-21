@@ -1,9 +1,10 @@
 #define r and original n
-#calculate n after one genera by n*(r+1)
-#repete in total 5 times
+#calculate the increase of infected person by a=a*r
+#sum n and each a
 n=84
+a=n
 r=1.2
 for i in range (1,6):
-    n=n*(r+1)
-
+    a=a*r
+    n=n+a
 print("When r =", r ,"n=",n,"after 5 generations")
