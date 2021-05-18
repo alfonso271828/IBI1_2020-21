@@ -1,0 +1,5 @@
+ mouse-human percentage =  0.8963963963963963      score =  1091
+random-human percentage =  0.05405405405405406      score =  -250
+mouse-random percentage =  0.058558558558558516      score =  -250
+ The score comparing mouse SOD2 gene and human SOD2 gene is 1091 while random score are -250. The score is drastically larger than random, which denote that human and mouse SOD2 gene are not likely to be two random genes, but should be closelyrelated.
+ The percentage of identical amino acid between human and mouse is 90% while random percentage is around 5%. Clear higher percentage further proved the close relationship between two genes.

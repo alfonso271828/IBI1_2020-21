@@ -1,5 +1,5 @@
-a = 170702
-c = 100321
+a = 170702 #my birthday
+c = 100321 #date
 d = abs(a-c)
 e = abs(a-190784)
 if d<e:

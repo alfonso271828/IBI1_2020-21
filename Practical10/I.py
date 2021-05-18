@@ -5,9 +5,9 @@ def reverse_complement_calculator(x):
     calculate the reverse complement of "sequence"
 
     """
-    tem = ''
-    for i in range(0,len(x)):
-        if x[i] == 'A' or x[i] == 'a':
+    tem = '' # a string store complementary sequence
+    for i in range(0,len(x)): #scan every nucleotide
+        if x[i] == 'A' or x[i] == 'a': #change the nucleotide to its complement
              tem = tem + 'T'
         elif x[i] == 'T' or x[i] == 't':
              tem = tem + 'A'
@@ -16,8 +16,8 @@ def reverse_complement_calculator(x):
         else:
              tem = tem +'C'
     sequence_final = ''
-    for i in range(0,len(tem)):
-        sequence_final = sequence_final + tem[len(tem)-1-i]
+    for i in range(len(tem)-1,-1,-1): # reverse the complementary sequence by reading the string reversely and add the nucleotides into a new string
+        sequence_final = sequence_final + tem[i]
     print(sequence_final)
     return
 

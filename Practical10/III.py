@@ -5,7 +5,7 @@ class Grade(object):
         self.poster = poster
         self.exam = exam
     def calculator(self):
-        total_mark = 0.3 * self.exam + 0.3*self.poster +0.4*self.code
-        print(self.name,' Total mark=',total_mark)
+        total_mark = 0.3 * self.exam + 0.3*self.poster +0.4*self.code # calculate weighted average of total mark
+        print(self.name,' Total mark=',total_mark) # print information
 c = Grade('A',100,99,99)
 c.calculator()

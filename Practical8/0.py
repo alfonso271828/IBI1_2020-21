@@ -1,5 +1,4 @@
 import re
-seq = 'ATGCGACTACGATCGAGGGCC'
 Condons ={'TTT':'F','TTC':'F','TTA':'L','TTG':'L','TCT':'S','TCC':'S','TCA':'S','TCG':'S',
           'TAT':'Y','TAC':'Y','TAA':'O','TAG':'U','TGT':'C','TGC':'C','TGA':'X','TGG':'W',
           'CTT':'L','CTC':'L','CTA':'L','CTG':'L','CCT':'P','CCC':'P','CCA':'P','CCG':'P',
@@ -8,7 +7,24 @@ Condons ={'TTT':'F','TTC':'F','TTA':'L','TTG':'L','TCT':'S','TCC':'S','TCA':'S',
           'AAT':'N','AAC':'B','AAA':'K','AAG':'K','AGT':'S','AGC':'S','AGA':'R','AGG':'R',
           'GTT':'V','GTC':'V','GTA':'V','GTG':'V','GCT':'A','GCC':'A','GCA':'A','GCG':'A',
           'GAT':'D','GAC':'D','GAA':'E','GAG':'E','GGT':'G','GGC':'G','GGA':'G','GGG':'G'}
-translation = ''
-for i in range(0,len(seq),3):# read DNA sequence in units of three nucleotides
-         translation = translation + Condons[seq[i:i+3]] # translate the unit by searching in dictionary and add it to amino acid string
-print(translation)
+S = open('unknown_function.fa')
+s = S.read()
+N =re.findall('\d\n([A-Z]+)',s)
+print(len(N))
+T =[]
+for i in range(len(N)):
+    b=N[i]
+    translation =''
+    for a in range(0,len(b),3):
+        if Condons[b[a:a + 3]] !=('O'or'U'or'X'):
+                  translation = translation + Condons[b[a:a + 3]]
+        else:
+            break
+    T.append(translation)
+print(len(T))
+lengths = []
+for z in range(len(T)):
+    lengths.append(len(T[z]))
+M=re.findall('([0-9A-Z]+?)\s+?[0-9]+?',s)
+print(len(lengths))
+print(len(M))

@@ -9,28 +9,28 @@ Condons ={'TTT':'F','TTC':'F','TTA':'L','TTG':'L','TCT':'S','TCC':'S','TCA':'S',
           'GAT':'D','GAC':'D','GAA':'E','GAG':'E','GGT':'G','GGC':'G','GGA':'G','GGG':'G'}
 S = open('unknown_function.fa')
 s = S.read()
-N =re.findall('\d\n([A-Z]+)',s)
+N =re.findall('\d\n([A-Z]+)',s) # extract all the sequences
 
-T =[]
-for i in range(len(N)):
+T =[] # a list storing translated sequence
+for i in range(len(N)): # to every sequence
     b=N[i]
     translation =''
-    for a in range(0,len(b),3):
+    for a in range(0,len(b),3): #read the sequence in unit of three
         if Condons[b[a:a + 3]] !=('O'or'U'or'X'):
-                  translation = translation + Condons[b[a:a + 3]]
+                  translation = translation + Condons[b[a:a + 3]]# translate the unit in to amino acid and store it in the translated string before stop codon
         else:
-            break
+            break # break the translation at stop codon
     T.append(translation)
-lengths = []
-for z in range(len(T)):
+lengths = [] # calculate the length of each translated sequence
+for z in range(len(T)): # store the lengths into a list
     lengths.append(len(T[z]))
-M=re.findall('([0-9A-Z]+?)\s+?[0-9]+?',s)
-new = open('unknown_DNA_to_protein2.fa','w')
+M=re.findall('([0-9A-Z]+?)\s+?[0-9]+?',s) # extract all names of genes
+new = open('unknown_DNA_to_protein2.fa','w') # create a file
 for q in range(len(N)):
-    new.write(f'{M[q]:16}{lengths[q]}\n{T[q]}\n')
+    new.write(f'{M[q]:16}{lengths[q]}\n{T[q]}\n')# write information of translated sequence into the file
 new.close()
 new1 = open('unknown_DNA_to_protein2.fa')
-for line in new1:
+for line in new1: #print the file
     print(line[:-1])
 
 

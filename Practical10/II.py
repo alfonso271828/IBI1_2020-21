@@ -4,6 +4,6 @@ class ClassInformation (object):
      self.last_name = last_name
      self.programme = programme
     def print1 (self):
-        print(self.first_name,' ',self.last_name,' ',self.programme)
+        print(self.first_name,' ',self.last_name,' ',self.programme) # print information
 c = ClassInformation('Jingxiang','Xu','BMI')
 c.print1()
