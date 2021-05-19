@@ -1,3 +1,4 @@
+# It might takes around 5 minutes to run this code, because go_obo.xml provided was quite big.
 import re
 import matplotlib.pyplot as plt
 from xml.dom.minidom import parse
